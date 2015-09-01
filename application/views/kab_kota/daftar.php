@@ -35,12 +35,15 @@
                                             while($id == $row->id_kota && $i < $n)
                                             {
                                                 echo '<li>'.$row->nama_bencana.'</li>';
-                                                $i=$i+1;
+                                                $i++;
                                                 $row = $kab_kota->row($i);
                                             }
                                         echo '</ul></td>';
                                     echo '<td class="text-center">
-                                        <a href="#" class="modal-anchor" data-toggle="modal" data-target="#pageModal" data-key="'.$row->id_kota.'" data-task="delete_kab_kota" title="Hapus Data">
+                                        <a href="'.site_url("main/ubah_kab_kota/".$id).'" title="Ubah Data">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="#" class="modal-anchor" data-toggle="modal" data-target="#pageModal" data-key="'.$id.'" data-task="delete_kab_kota" title="Hapus Data">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>';

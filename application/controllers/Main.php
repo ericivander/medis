@@ -61,6 +61,36 @@ class Main extends CI_Controller
 		echo '<br />Klik <a href="'.site_url('main/tambah_kab_kota').'">disini</a> untuk kembali ke halaman sebelumnya';
 	}
 
+	public function ubah_kab_kota($id)
+	{
+		$this->load->model('bencana_model');
+		$data['bencana'] = $this->bencana_model->get_min();
+
+		$this->load->model('kab_kota_model');
+		$data['kota'] = $this->kab_kota_model->getById($id);
+
+		$this->load->model('rawan_model');
+		$data['rawan'] = $this->rawan_model->getByIdKota($id);
+		$data['id_kota'] = $id;
+
+		$this->load->view('master/header');
+		$this->load->view('kab_kota/ubah', $data);
+		$this->load->view('master/footer');		
+	}
+
+	public function do_ubah_kab_kota()
+	{
+		$this->load->model('kab_kota_model');
+
+		$id_kota = $this->input->post('id_kota');
+		$nama_kota = $this->input->post('nama_kota');
+		$bencana = $this->input->post('bencana');
+
+		$this->kab_kota_model->update($id_kota, $nama_kota, $bencana);
+		echo "Perubahan kabupaten/kota berhasil.";
+		echo '<br />Klik <a href="'.site_url('main/daftar_kab_kota').'">disini</a> untuk kembali ke halaman sebelumnya';
+	}
+
 	public function delete_kab_kota($id_kota)
 	{
 		$this->load->model('kab_kota_model');

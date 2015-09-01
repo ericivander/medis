@@ -13,6 +13,15 @@ class Kab_kota_model extends CI_Model
 		return $query;
 	}
 
+	public function getById($id)
+	{
+		$this->db->select('kab_kota.nama_kota');
+		$this->db->from('kab_kota');
+		$this->db->where('kab_kota.id_kota', $id);
+		$query = $this->db->get()->row();
+		return $query;
+	}
+
 	public function get_min()
 	{
 		$query = $this->db->get('kab_kota');
@@ -35,6 +44,36 @@ class Kab_kota_model extends CI_Model
 		$this->db->insert('kab_kota', $data);
 
 		$id_kota = $this->get_id_by_name($nama_kota)->id_kota;
+		if(is_array($bencana))
+		{
+			foreach($bencana as $b)
+			{
+				$data = array(
+					'id_kota' => $id_kota,
+					'id_bencana' => $b
+				);
+				$this->db->insert('rawan_akan', $data);
+			}
+		}
+		else
+		{
+			$data = array(
+				'id_kota' => $id_kota,
+				'id_bencana' => $b
+			);
+			$this->db->insert('rawan_akan', $data);
+		}
+	}
+
+	public function update($id_kota, $nama_kota, $bencana)
+	{
+		$data = array('nama_kota' => $nama_kota);
+		$this->db->where('id_kota', $id_kota);
+		$this->db->update('kab_kota', $data); 
+
+		$this->db->where('id_kota', $id_kota);
+		$this->db->delete('rawan_akan');
+
 		if(is_array($bencana))
 		{
 			foreach($bencana as $b)
