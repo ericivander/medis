@@ -40,7 +40,10 @@
                                             }
                                         echo '</ul></td>';
                                     echo '<td class="text-center">
-                                        <a href="#" class="modal-anchor" data-toggle="modal" data-target="#pageModal" data-key="'.$row->id_bencana.'" data-task="delete_bencana" title="Hapus Data">
+                                        <a href="'.site_url("main/ubah_bencana/".$id).'" title="Ubah Data">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a href="#" class="modal-anchor" data-toggle="modal" data-target="#pageModal" data-key="'.$id.'" data-task="delete_bencana" title="Hapus Data">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>';

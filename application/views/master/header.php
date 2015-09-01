@@ -138,7 +138,7 @@
                             </ul>
                         </li>
 						<li>
-                            <a href="#"><i class="fa fa-calculator fa-fw"></i> Tugaskan Dokter</span></a>
+                            <a href="<?php echo site_url("compute") ?>"><i class="fa fa-calculator fa-fw"></i> Penugasan Dokter</a>
                         </li>
                     </ul>
                 </div>

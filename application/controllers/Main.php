@@ -138,6 +138,42 @@ class Main extends CI_Controller
 		echo '<br />Klik <a href="'.site_url('main/tambah_bencana').'">disini</a> untuk kembali ke halaman sebelumnya';
 	}
 
+	public function ubah_bencana($id)
+	{
+		$this->load->model('keahlian_model');
+		$data['keahlian'] = $this->keahlian_model->get();
+
+		$this->load->model('bencana_model');
+		$data['bencana'] = $this->bencana_model->getById($id);
+		$data['memerlukan'] = $this->bencana_model->getMemerlukanById($id);
+		$data['id_bencana'] = $id;
+
+		$this->load->view('master/header');
+		$this->load->view('bencana/ubah', $data);
+		$this->load->view('master/footer');		
+	}
+
+	public function do_ubah_bencana()
+	{
+		$this->load->model('bencana_model');
+
+		$id_bencana = $this->input->post('id_bencana');
+		$nama_bencana = $this->input->post('nama_bencana');
+		$keahlian = $this->input->post('keahlian');
+
+		$this->bencana_model->update($id_bencana, $nama_bencana, $keahlian);
+		echo "Perubahan jenis bencana berhasil.";
+		echo '<br />Klik <a href="'.site_url('main/daftar_bencana').'">disini</a> untuk kembali ke halaman sebelumnya';
+	}
+
+	public function delete_bencana($id_bencana)
+	{
+		$this->load->model('bencana_model');
+		$this->bencana_model->delete($id_bencana);
+		echo "Penghapusan jenis bencana berhasil.";
+		echo '<br />Klik <a href="'.site_url('main/daftar_bencana').'">disini</a> untuk kembali ke halaman sebelumnya';
+	}
+
 	public function daftar_tenaga_medis()
 	{
 		$this->load->model('tenaga_medis_model');
