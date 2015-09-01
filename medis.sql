@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2015 at 08:33 AM
+-- Generation Time: Sep 01, 2015 at 07:51 AM
 -- Server version: 5.6.24
--- PHP Version: 5.5.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -36,11 +36,11 @@ CREATE TABLE IF NOT EXISTS `bencana` (
 --
 
 INSERT INTO `bencana` (`id_bencana`, `nama_bencana`) VALUES
-(1, 'A'),
-(2, 'B'),
-(3, 'C'),
-(4, 'D'),
-(5, 'E');
+(1, 'Angin Topan'),
+(2, 'Gunung Meletus'),
+(3, 'Gempa Bumi'),
+(4, 'Tanah Longsor'),
+(5, 'Banjir');
 
 -- --------------------------------------------------------
 
@@ -112,11 +112,11 @@ CREATE TABLE IF NOT EXISTS `kab_kota` (
 --
 
 INSERT INTO `kab_kota` (`id_kota`, `nama_kota`) VALUES
-(1, '1'),
-(2, '2'),
-(3, '3'),
-(4, '4'),
-(5, '5');
+(1, 'Surabaya'),
+(2, 'Mojokerto'),
+(3, 'Jombang'),
+(4, 'Kediri'),
+(5, 'Tulungagung');
 
 -- --------------------------------------------------------
 
@@ -264,13 +264,13 @@ CREATE TABLE IF NOT EXISTS `tenaga_medis` (
 --
 
 INSERT INTO `tenaga_medis` (`id_tenaga_medis`, `id_kota`, `id_psm`, `nama_tenaga_medis`) VALUES
-(1, NULL, NULL, '1'),
-(2, NULL, NULL, '2'),
-(3, NULL, NULL, '3'),
-(4, NULL, NULL, '4'),
-(5, NULL, NULL, '5'),
-(6, NULL, NULL, '6'),
-(7, NULL, NULL, '7');
+(1, NULL, NULL, 'Andi'),
+(2, NULL, NULL, 'Budi'),
+(3, NULL, NULL, 'Cici'),
+(4, NULL, NULL, 'Dedi'),
+(5, NULL, NULL, 'Evan'),
+(6, NULL, NULL, 'Fitri'),
+(7, NULL, NULL, 'Gisma');
 
 --
 -- Indexes for dumped tables

@@ -137,6 +137,9 @@
                                 </li>
                             </ul>
                         </li>
+						<li>
+                            <a href="#"><i class="fa fa-calculator fa-fw"></i> Tugaskan Dokter</span></a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
