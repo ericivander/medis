@@ -35,6 +35,15 @@ class Kab_kota_model extends CI_Model
 		$this->db->where('nama_kota', $nama_kota);
 		return $this->db->get()->row();
 	}
+	
+	public function getAllID()
+	{
+		$this->db->select('id_kota');
+		$this->db->from('kab_kota');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
 
 	public function insert($nama_kota, $bencana)
 	{

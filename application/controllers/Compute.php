@@ -12,8 +12,8 @@ class Compute extends CI_Controller
 	 		redirect ('login');
 		}
 		*/
-		$this->DoctorID = null;
-		$this->JobID = null;
+		$this->Doctor = null;
+		$this->Job = null;
 		$this->Capacity = null;
 		
 		$this->nDoctor = 0;
@@ -29,27 +29,45 @@ class Compute extends CI_Controller
 	
 	private function getDoctor()
 	{
-		$iTemp = 1;
-		//getDokter();
+		$iTemp = 0;
+		$this->load->model('tenaga_medis_model');
+		$this->Doctor = $this->tenaga_medis_model->getAllID();
+		echo "Dokter : ";
+		echo "<br/>";
+		foreach($this->Doctor as $row)
+		{
+			echo $row->id;
+			echo "<br/>";
+			$iTemp++;
+		}
 		$this->nDoctor = $iTemp;
 	}
 	
 	private function getJob()
 	{
-		$iTemp = 1;
-		//getKeahlian();
+		$iTemp = 0;
+		$this->load->model('keahlian_model');
+		$this->Job = $this->keahlian_model->getAllID();
+		echo "Keahlian : ";
+		echo "<br/>";
+		foreach($this->Job as $row)
+		{
+			echo $row->id;
+			echo "<br/>";
+			$iTemp++;
+		}
 		$this->nJob = $iTemp;
 	}
 	
 	private function getCondition()
 	{
-		
+		//kab_kota -> rawan_akan -> bencana -> memerlukan -> keahlian
 	}
 	
 	private function constructGraph()
 	{
 		//getKeahlianDokter();
-		$this->Capacity['Job']['Doctor'] = 1;
+		//$this->Capacity['Job']['Doctor'] = 1;
 	}
 	
 	public function main()

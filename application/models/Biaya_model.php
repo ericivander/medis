@@ -22,6 +22,16 @@ class Biaya_model extends CI_Model
 		$this->db->where('id_kota', $id_kota);
 		return $this->db->get()->row();
 	}
+	
+	public function getValue($id_tenaga_medis, $id_kota)
+	{
+		$this->db->select('biaya');
+		$this->db->from('biaya');
+		$this->db->where('id_tenaga_medis', $id_tenaga_medis);
+		$this->db->where('id_kota', $id_kota);
+		$data = $this->db->get();
+		return $data->row();
+	}
 
 	public function insert($id_tenaga_medis, $id_kota, $biaya)
 	{

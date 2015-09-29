@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 01, 2015 at 07:51 AM
+-- Generation Time: Sep 30, 2015 at 01:09 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -19,6 +19,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `medis`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assignment`
+--
+
+CREATE TABLE IF NOT EXISTS `assignment` (
+  `id_tenaga_medis` int(11) NOT NULL,
+  `id_kota` int(11) NOT NULL,
+  `assignment` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -277,6 +289,12 @@ INSERT INTO `tenaga_medis` (`id_tenaga_medis`, `id_kota`, `id_psm`, `nama_tenaga
 --
 
 --
+-- Indexes for table `assignment`
+--
+ALTER TABLE `assignment`
+  ADD KEY `fk_assignment_tenagamedis` (`id_tenaga_medis`), ADD KEY `fk_assignment_kabkota` (`id_kota`);
+
+--
 -- Indexes for table `bencana`
 --
 ALTER TABLE `bencana`
@@ -367,6 +385,13 @@ ALTER TABLE `tenaga_medis`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `assignment`
+--
+ALTER TABLE `assignment`
+ADD CONSTRAINT `fk_assignment_kabkota` FOREIGN KEY (`id_kota`) REFERENCES `kab_kota` (`id_kota`),
+ADD CONSTRAINT `fk_assignment_tenagamedis` FOREIGN KEY (`id_tenaga_medis`) REFERENCES `tenaga_medis` (`id_tenaga_medis`);
 
 --
 -- Constraints for table `biaya`

@@ -20,6 +20,15 @@ class Keahlian_model extends CI_Model
 		$this->db->where('nama_keahlian', $nama_keahlian);
 		return $this->db->get()->row();
 	}
+	
+	public function getAllID()
+	{
+		$this->db->select('id_keahlian as id');
+		$this->db->from('keahlian');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
 
 	public function insert($nama_keahlian)
 	{

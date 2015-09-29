@@ -11,4 +11,13 @@ class Rawan_model extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
+	
+	public function getAllID()
+	{
+		$this->db->select('id_bencana');
+		$this->db->from('rawan_akan');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
 }

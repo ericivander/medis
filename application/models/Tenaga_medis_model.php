@@ -37,6 +37,15 @@ class Tenaga_medis_model extends CI_Model
 		$this->db->where('nama_tenaga_medis', $nama_tenaga_medis);
 		return $this->db->get()->row();
 	}
+	
+	public function getAllID()
+	{
+		$this->db->select('id_tenaga_medis as id');
+		$this->db->from('tenaga_medis');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
 
 	public function insert($nama_tenaga_medis, $keahlian)
 	{
