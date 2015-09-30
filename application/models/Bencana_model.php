@@ -31,16 +31,6 @@ class Bencana_model extends CI_Model
 		$query = $this->db->get();
 		return $query;
 	}
-	
-	public function getKeahlianByBencana($id)
-	{
-		$this->db->select('memerlukan.id_keahlian');
-		$this->db->from('memerlukan');
-		$this->db->where('memerlukan.id_bencana', $id);
-		
-		$data = $this->db->get();
-		return $data->result();
-	}
 
 	public function get_min()
 	{
@@ -54,6 +44,24 @@ class Bencana_model extends CI_Model
 		$this->db->from('bencana');
 		$this->db->where('nama_bencana', $nama_bencana);
 		return $this->db->get()->row();
+	}
+	
+	public function getAllID()
+	{
+		$this->db->select('id_bencana as id');
+		$this->db->from('bencana');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+	
+	public function getXJob()
+	{
+		$this->db->select('id_bencana as id_b, id_keahlian as id_k');
+		$this->db->from('memerlukan');
+		
+		$data = $this->db->get();
+		return $data->result();
 	}
 
 	public function insert($nama_bencana, $keahlian)

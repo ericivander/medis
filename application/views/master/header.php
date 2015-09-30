@@ -74,9 +74,6 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="<?php echo site_url("main/index") ?>"><i class="fa fa-table fa-fw"></i> Pemetaan</a>
-                        </li>
-                        <li>
                             <a href="#"><i class="fa fa-hospital-o fa-fw"></i> Kabupaten/Kota<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>

@@ -46,6 +46,26 @@ class Tenaga_medis_model extends CI_Model
 
 		return $data->result();
 	}
+	
+	public function getXJob()
+	{
+		$this->db->select('tenaga_medis.id_tenaga_medis as id_d, keahlian.id_keahlian as id_k');
+		$this->db->from('tenaga_medis, memiliki, keahlian');
+		$this->db->where('tenaga_medis.id_tenaga_medis = memiliki.id_tenaga_medis and keahlian.id_keahlian = memiliki.id_keahlian');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+	
+	public function getNama($id)
+	{
+		$this->db->select('nama_tenaga_medis as nama');
+		$this->db->from('tenaga_medis');
+		$this->db->where('id_tenaga_medis', $id);
+		
+		$data = $this->db->get();
+		return $data->row();
+	}
 
 	public function insert($nama_tenaga_medis, $keahlian)
 	{
