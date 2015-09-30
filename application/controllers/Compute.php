@@ -335,6 +335,6 @@ class Compute extends CI_Controller
 		$this->delete();
 		$this->save();
 		
-		$this->index();
+		redirect('compute');
 	}
 }
