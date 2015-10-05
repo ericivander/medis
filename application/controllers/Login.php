@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Akun extends CI_Controller
+class Login extends CI_Controller
 {
 	public function index ()
 	{
 		if ($this->session->has_userdata('logged_in'))
 		{
-			redirect ('main');
+			redirect ('beranda');
 		}
 		else
 		{
@@ -21,16 +21,18 @@ class Akun extends CI_Controller
 		$password = $this->input->post ('password');
 
 		$this->load->model ('akun_model');
-		if($this->akun_model->login ($username, $password))
+		$privilege = $this->akun_model->login ($username, $password);
+		
+		if($privilege != 'failed')
    		{
-   			$userdata = $this->akun_model->get_userdata ($username);
-     		$data = array(
+   			$data = array(
      			'username' => $username,
-     			'logged_in' => TRUE
+     			'logged_in' => TRUE,
+     			'privilege' => $privilege
      		);
      		$this->session->set_userdata($data);
 
-     		redirect ('main');
+     		redirect ('beranda');
    		}
    		else
    		{
@@ -72,8 +74,7 @@ class Akun extends CI_Controller
 
 	public function logout ()
 	{
-		$this->session->unset_userdata('logged_in');
 		$this->session->sess_destroy();
-		redirect ('akun');
+		redirect ('login');
 	}
 }

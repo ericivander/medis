@@ -12,6 +12,15 @@ class PSM_model extends CI_Model
 		return $query;
 	}
 
+	public function get_by_id($id)
+	{
+		$this->db->from('pusat_sdm_medis');
+		$this->db->where('id_psm', $id);
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
 	public function get_id_by_name($nama_psm)
 	{
 		$this->db->select('id_psm');
@@ -23,6 +32,12 @@ class PSM_model extends CI_Model
 	public function insert($data)
 	{
 		$this->db->insert('pusat_sdm_medis', $data);
+	}
+
+	public function update($id, $data)
+	{
+		$this->db->where('id_psm', $id);
+		$this->db->update('pusat_sdm_medis', $data);
 	}
 
 	public function delete($id_psm)

@@ -315,9 +315,9 @@ class Compute extends CI_Controller
 		}
 		$data['city'] = $this->City;
 		
-		$this->load->view('master/header');
-		$this->load->view('assignment/index', $data);
-		$this->load->view('master/footer');
+		$this->load->view('header');
+		$this->load->view('beranda', $data);
+		$this->load->view('footer');
 	}
 	
 	public function main()

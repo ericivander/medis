@@ -13,6 +13,25 @@ class Kab_kota_model extends CI_Model
 		return $query;
 	}
 
+	public function get_by_id($id)
+	{
+		$this->db->from('kab_kota');
+		$this->db->where('id_kota', $id);
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
+	public function get_detil_by_id($id)
+	{
+		$this->db->select('rawan_akan.id_bencana');
+		$this->db->from('rawan_akan');
+		$this->db->where('rawan_akan.id_kota', $id);
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
 	public function getById($id)
 	{
 		$this->db->select('kab_kota.nama_kota');
@@ -64,74 +83,34 @@ class Kab_kota_model extends CI_Model
 		return $data->row();
 	}
 
-	public function insert($nama_kota, $bencana)
+	public function insert($data)
 	{
-		$data = array(
-			'nama_kota' => $nama_kota
-		);
 		$this->db->insert('kab_kota', $data);
-
-		$id_kota = $this->get_id_by_name($nama_kota)->id_kota;
-		if(is_array($bencana))
-		{
-			foreach($bencana as $b)
-			{
-				$data = array(
-					'id_kota' => $id_kota,
-					'id_bencana' => $b
-				);
-				$this->db->insert('rawan_akan', $data);
-			}
-		}
-		else
-		{
-			$data = array(
-				'id_kota' => $id_kota,
-				'id_bencana' => $b
-			);
-			$this->db->insert('rawan_akan', $data);
-		}
 	}
 
-	public function update($id_kota, $nama_kota, $bencana)
+	public function insert_bencana($data)
 	{
-		$data = array('nama_kota' => $nama_kota);
-		$this->db->where('id_kota', $id_kota);
-		$this->db->update('kab_kota', $data); 
-
-		$this->db->where('id_kota', $id_kota);
-		$this->db->delete('rawan_akan');
-
-		if(is_array($bencana))
-		{
-			foreach($bencana as $b)
-			{
-				$data = array(
-					'id_kota' => $id_kota,
-					'id_bencana' => $b
-				);
-				$this->db->insert('rawan_akan', $data);
-			}
-		}
-		else
-		{
-			$data = array(
-				'id_kota' => $id_kota,
-				'id_bencana' => $b
-			);
-			$this->db->insert('rawan_akan', $data);
-		}
+		$this->db->insert('rawan_akan', $data);
 	}
 
-	public function delete($id_kota)
+	public function update($id, $data)
 	{
-		$this->db->where('id_kota', $id_kota);
+		$this->db->where('id_kota', $id);
+		$this->db->update('kab_kota', $data);
+
+		$this->db->where('id_kota', $id);
+		$this->db->delete('rawan_akan');	
+	}
+
+	public function delete($id)
+	{
+		$this->db->where('id_kota', $id);
 		$this->db->delete('biaya');
 		
-		$this->db->where('id_kota', $id_kota);
+		$this->db->where('id_kota', $id);
 		$this->db->delete('rawan_akan');
 		
-		$this->db->where('id_kota', $id_kota);
+		$this->db->where('id_kota', $id);
 		$this->db->delete('kab_kota');
 	}
 }

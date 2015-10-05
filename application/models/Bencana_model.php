@@ -14,13 +14,23 @@ class Bencana_model extends CI_Model
 		return $query;
 	}
 
-	public function getById($id)
+	public function get_by_id($id)
 	{
-		$this->db->select('bencana.nama_bencana');
 		$this->db->from('bencana');
 		$this->db->where('bencana.id_bencana', $id);
-		$query = $this->db->get()->row();
-		return $query;
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
+	public function get_detil_by_id($id)
+	{
+		$this->db->select('memerlukan.id_keahlian');
+		$this->db->from('memerlukan');
+		$this->db->where('memerlukan.id_bencana', $id);
+		$data = $this->db->get();
+
+		return $data->result();
 	}
 
 	public function getMemerlukanById($id)
@@ -64,74 +74,34 @@ class Bencana_model extends CI_Model
 		return $data->result();
 	}
 
-	public function insert($nama_bencana, $keahlian)
+	public function insert($data)
 	{
-		$data = array(
-			'nama_bencana' => $nama_bencana
-		);
 		$this->db->insert('bencana', $data);
-
-		$id_bencana = $this->get_id_by_name($nama_bencana)->id_bencana;
-		if(is_array($keahlian))
-		{
-			foreach($keahlian as $k)
-			{
-				$data = array(
-					'id_bencana' => $id_bencana,
-					'id_keahlian' => $k
-				);
-				$this->db->insert('memerlukan', $data);
-			}
-		}
-		else
-		{
-			$data = array(
-				'id_bencana' => $id_bencana,
-				'id_keahlian' => $k
-			);
-			$this->db->insert('memerlukan', $data);
-		}
 	}
 
-	public function update($id_bencana, $nama_bencana, $keahlian)
+	public function insert_keahlian($data)
 	{
-		$data = array('nama_bencana' => $nama_bencana);
-		$this->db->where('id_bencana', $id_bencana);
-		$this->db->update('bencana', $data); 
-
-		$this->db->where('id_bencana', $id_bencana);
-		$this->db->delete('memerlukan');
-
-		if(is_array($keahlian))
-		{
-			foreach($keahlian as $k)
-			{
-				$data = array(
-					'id_bencana' => $id_bencana,
-					'id_keahlian' => $k
-				);
-				$this->db->insert('memerlukan', $data);
-			}
-		}
-		else
-		{
-			$data = array(
-				'id_bencana' => $id_bencana,
-				'id_keahlian' => $k
-			);
-			$this->db->insert('memerlukan', $data);
-		}
+		$this->db->insert('memerlukan', $data);
 	}
 
-	public function delete($id_bencana)
+	public function update($id, $data)
 	{
-		$this->db->where('id_bencana', $id_bencana);
+		$this->db->where('id_bencana', $id);
+		$this->db->update('bencana', $data);
+
+		$this->db->where('id_bencana', $id);
+		$this->db->delete('memerlukan');	
+	}
+
+	public function delete($id)
+	{
+		$this->db->where('id_bencana', $id);
 		$this->db->delete('memerlukan');
 		
-		$this->db->where('id_bencana', $id_bencana);
+		$this->db->where('id_bencana', $id);
 		$this->db->delete('rawan_akan');
 		
-		$this->db->where('id_bencana', $id_bencana);
+		$this->db->where('id_bencana', $id);
 		$this->db->delete('bencana');		
 	}
 }

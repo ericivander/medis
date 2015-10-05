@@ -14,6 +14,15 @@ class Biaya_model extends CI_Model
 		return $query->result();
 	}
 
+	public function get_by_id($id)
+	{
+		$this->db->from('biaya');
+		$this->db->where('id_biaya', $id);
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+
 	public function get_id($id_tenaga_medis, $id_kota)
 	{
 		$this->db->select('id_biaya');
@@ -33,14 +42,15 @@ class Biaya_model extends CI_Model
 		return $data->row();
 	}
 
-	public function insert($id_tenaga_medis, $id_kota, $biaya)
+	public function insert($data)
 	{
-		$data = array(
-			'id_tenaga_medis' => $id_tenaga_medis,
-			'id_kota' => $id_kota,
-			'biaya' => $biaya
-		);
 		$this->db->insert('biaya', $data);
+	}
+
+	public function update($id, $data)
+	{
+		$this->db->where('id_biaya', $id);
+		$this->db->update('biaya', $data);
 	}
 
 	public function delete($id_biaya)

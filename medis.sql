@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2015 at 01:09 AM
+-- Generation Time: Oct 05, 2015 at 03:35 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `medis`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `akun`
+--
+
+CREATE TABLE IF NOT EXISTS `akun` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `privilege` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `akun`
+--
+
+INSERT INTO `akun` (`username`, `password`, `privilege`) VALUES
+('admin', 'admin', 'administrator'),
+('umum', 'umum', 'akun umum');
 
 -- --------------------------------------------------------
 

@@ -34,22 +34,24 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-6 col-md-offset-3">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Login</h3>
+                        <h2 class="text-center">Pemetaan Tenaga Medis</h2>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <p class="text-center">Selamat datang. Silahkan login terlebih dahulu.</p>
+                        <form role="form" method="post" action="<?=site_url('login/verify_login')?>">
                             <fieldset>
-                                <div class="form-group">
+                                <div class="form-group col-md-8 col-md-offset-2">
                                     <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
                                 </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                <div class="form-group col-md-8 col-md-offset-2">
+                                    <input class="form-control" placeholder="Password" name="password" type="password">
                                 </div>
-                                <!-- Change this to a button or input when using this as a form -->
-                                <a href="." class="btn btn-lg btn-success btn-block">Login</a>
+                                <div class="form-group col-md-8 col-md-offset-2">
+                                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login" />
+                                </div>
                             </fieldset>
                         </form>
                     </div>
