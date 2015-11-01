@@ -1,9 +1,9 @@
-<div id="page-wrapper">
+<div class="col-lg-8 col-lg-offset-2" id="page-content">
     <div class="row">
-        <div class="col-lg-10">
+        <div class="col-lg-8">
             <h1 class="page-header">Komputasi Penugasan Dokter</h1>
         </div>
-		<div class="col-lg-2">
+		<div class="col-lg-4 text-right">
 			<br/>
 			<br/>
 			<a href="<?php echo site_url("compute/main") ?>" class="btn btn-success" role="button">
@@ -102,7 +102,7 @@
 										{
 											foreach($city as $row)
 											{
-												echo '<th class="'.$row->id.'">';
+												echo '<th class="text-center '.$row->id.'">';
 												echo $row->id;
 												echo "</th>";
 											}
@@ -119,7 +119,7 @@
 										foreach($doctor as $row)
 										{
 											echo '<tr class="'.$row->id.'">';
-											echo "<th>";
+											echo "<th class='text-center'>";
 											echo $row->id;
 											echo "</th>";
 											$ccol = 1;
@@ -130,11 +130,11 @@
 													$result = $assignment[$crow][$ccol++];
 													if($result == 999)
 													{
-														echo '<td class="'.$row->id.' '.$col->id.'" style="background-color:#CC0000; color:white">';
+														echo '<td class="text-center '.$row->id.' '.$col->id.'" style="background-color:#E62F17; color:white">';
 													}
 													else
 													{
-														echo '<td class="'.$row->id.' '.$col->id.'" style="background-color:#33CC33">';
+														echo '<td class="text-center '.$row->id.' '.$col->id.'" style="background-color:#19FF8E">';
 													}
 													echo $result;
 													echo "</td>";

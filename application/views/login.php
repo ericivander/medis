@@ -28,6 +28,13 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style type="text/css">
+        body {
+            background-image: url('<?php echo base_url()?>assets/img/login-background.jpg');
+            background-size: 100%;
+        }
+    </style>
+
 </head>
 
 <body>

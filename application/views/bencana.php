@@ -1,9 +1,16 @@
 <?php $this->view('header'); ?>
 
-<div id="page-wrapper">
+<div class="col-lg-8 col-lg-offset-2" id="page-content">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Bencana</h1>
+        <div class="col-lg-8">
+            <h1 class="page-header">Data Master Bencana</h1>
+        </div>
+        <div class="col-lg-4 text-right">
+            <br/>
+            <br/>
+            <a href="#" class="btn btn-success data-modal" data-toggle="modal" data-target="#dataModal" data-key="0">
+                <i class="fa fa-plus-square-o fa-fw"></i> Tambah Data Bencana
+            </a>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -49,8 +56,6 @@
                             </div>';
                         }
                     ?>
-                    <a href="#" class="btn btn-primary data-modal" data-toggle="modal" data-target="#dataModal" data-key="0"><i class="fa fa-plus-square-o fa-fw"></i> Tambah Data Bencana</a>
-                    <br /><br />
                     <div class="dataTable_wrapper">
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
