@@ -113,13 +113,13 @@ class Solution extends CI_Controller
 					{
 						if($iter1 == $iter2)
 						{
-							if($dataMatrix[$idDokter1][$idx1] < $dataMatrix[$idDokter2][idx2])
+							if(intval($dataMatrix[$idDokter1][$iter1]) < intval($dataMatrix[$idDokter2][$iter2]))
 							{
-								unset($doctorCity[$idDokter2]->$idx2);
+								unset($doctorCity[$idDokter2][$idx2]);
 							}
-							else if($dataMatrix[$idDokter1][$idx1] > $dataMatrix[$idDokter2][idx2])
+							else
 							{
-								unset($doctorCity[$idDokter1]->$idx1);
+								unset($doctorCity[$idDokter1][$idx1]);
 							}
 						}
 					}
