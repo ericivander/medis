@@ -73,7 +73,7 @@
                                 foreach($biaya as $row)
                                 {
                                     echo '<tr>';
-                                        echo '<td>'.$row->id_biaya.'</td>';
+                                        echo '<td>'.$i.'</td>';
                                         echo '<td>'.$row->nama_tenaga_medis.'</td>';
                                         echo '<td>'.$row->nama_kota.'</td>';
                                         echo '<td>'.$row->biaya.'</td>';

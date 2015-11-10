@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2015 at 03:35 PM
+-- Generation Time: Nov 10, 2015 at 06:04 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -52,6 +52,278 @@ CREATE TABLE IF NOT EXISTS `assignment` (
   `assignment` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `assignment`
+--
+
+INSERT INTO `assignment` (`id_tenaga_medis`, `id_kota`, `assignment`) VALUES
+(1, 1, 0),
+(1, 2, 0),
+(1, 3, 0),
+(1, 4, 0),
+(1, 5, 0),
+(1, 6, 0),
+(1, 7, 0),
+(1, 8, 0),
+(1, 9, 0),
+(1, 10, 0),
+(1, 11, 0),
+(1, 12, 0),
+(1, 13, 0),
+(1, 14, 0),
+(1, 15, 0),
+(1, 16, 0),
+(1, 17, 0),
+(1, 18, 0),
+(1, 19, 0),
+(1, 20, 0),
+(1, 21, 0),
+(1, 22, 0),
+(1, 23, 0),
+(1, 24, 0),
+(1, 25, 0),
+(1, 26, 0),
+(1, 27, 0),
+(1, 28, 0),
+(1, 29, 0),
+(1, 30, 0),
+(1, 31, 0),
+(1, 32, 0),
+(1, 33, 0),
+(1, 34, 0),
+(1, 35, 0),
+(1, 36, 0),
+(1, 37, 0),
+(1, 38, 0),
+(2, 1, 0),
+(2, 2, 0),
+(2, 3, 0),
+(2, 4, 0),
+(2, 5, 0),
+(2, 6, 0),
+(2, 7, 0),
+(2, 8, 0),
+(2, 9, 0),
+(2, 10, 0),
+(2, 11, 0),
+(2, 12, 1),
+(2, 13, 0),
+(2, 14, 0),
+(2, 15, 0),
+(2, 16, 0),
+(2, 17, 0),
+(2, 18, 1),
+(2, 19, 0),
+(2, 20, 0),
+(2, 21, 1),
+(2, 22, 1),
+(2, 23, 1),
+(2, 24, 1),
+(2, 25, 0),
+(2, 26, 1),
+(2, 27, 0),
+(2, 28, 1),
+(2, 29, 0),
+(2, 30, 1),
+(2, 31, 1),
+(2, 32, 0),
+(2, 33, 0),
+(2, 34, 1),
+(2, 35, 0),
+(2, 36, 1),
+(2, 37, 1),
+(2, 38, 1),
+(3, 1, 0),
+(3, 2, 0),
+(3, 3, 0),
+(3, 4, 0),
+(3, 5, 0),
+(3, 6, 0),
+(3, 7, 0),
+(3, 8, 0),
+(3, 9, 0),
+(3, 10, 0),
+(3, 11, 0),
+(3, 12, 1),
+(3, 13, 0),
+(3, 14, 0),
+(3, 15, 0),
+(3, 16, 0),
+(3, 17, 0),
+(3, 18, 1),
+(3, 19, 0),
+(3, 20, 0),
+(3, 21, 1),
+(3, 22, 1),
+(3, 23, 1),
+(3, 24, 1),
+(3, 25, 0),
+(3, 26, 1),
+(3, 27, 0),
+(3, 28, 1),
+(3, 29, 0),
+(3, 30, 1),
+(3, 31, 1),
+(3, 32, 0),
+(3, 33, 0),
+(3, 34, 1),
+(3, 35, 0),
+(3, 36, 1),
+(3, 37, 1),
+(3, 38, 1),
+(4, 1, 0),
+(4, 2, 0),
+(4, 3, 0),
+(4, 4, 0),
+(4, 5, 0),
+(4, 6, 0),
+(4, 7, 0),
+(4, 8, 0),
+(4, 9, 0),
+(4, 10, 0),
+(4, 11, 0),
+(4, 12, 0),
+(4, 13, 0),
+(4, 14, 0),
+(4, 15, 0),
+(4, 16, 0),
+(4, 17, 0),
+(4, 18, 0),
+(4, 19, 0),
+(4, 20, 0),
+(4, 21, 0),
+(4, 22, 0),
+(4, 23, 0),
+(4, 24, 0),
+(4, 25, 0),
+(4, 26, 0),
+(4, 27, 0),
+(4, 28, 0),
+(4, 29, 0),
+(4, 30, 0),
+(4, 31, 0),
+(4, 32, 0),
+(4, 33, 0),
+(4, 34, 0),
+(4, 35, 0),
+(4, 36, 0),
+(4, 37, 0),
+(4, 38, 0),
+(5, 1, 0),
+(5, 2, 0),
+(5, 3, 0),
+(5, 4, 0),
+(5, 5, 0),
+(5, 6, 0),
+(5, 7, 0),
+(5, 8, 0),
+(5, 9, 0),
+(5, 10, 0),
+(5, 11, 0),
+(5, 12, 1),
+(5, 13, 0),
+(5, 14, 0),
+(5, 15, 0),
+(5, 16, 0),
+(5, 17, 0),
+(5, 18, 1),
+(5, 19, 0),
+(5, 20, 0),
+(5, 21, 1),
+(5, 22, 1),
+(5, 23, 1),
+(5, 24, 1),
+(5, 25, 0),
+(5, 26, 1),
+(5, 27, 0),
+(5, 28, 1),
+(5, 29, 0),
+(5, 30, 1),
+(5, 31, 1),
+(5, 32, 0),
+(5, 33, 0),
+(5, 34, 1),
+(5, 35, 0),
+(5, 36, 1),
+(5, 37, 1),
+(5, 38, 1),
+(6, 1, 0),
+(6, 2, 0),
+(6, 3, 0),
+(6, 4, 0),
+(6, 5, 0),
+(6, 6, 0),
+(6, 7, 0),
+(6, 8, 0),
+(6, 9, 0),
+(6, 10, 0),
+(6, 11, 0),
+(6, 12, 1),
+(6, 13, 0),
+(6, 14, 0),
+(6, 15, 0),
+(6, 16, 0),
+(6, 17, 0),
+(6, 18, 1),
+(6, 19, 0),
+(6, 20, 0),
+(6, 21, 1),
+(6, 22, 1),
+(6, 23, 1),
+(6, 24, 1),
+(6, 25, 0),
+(6, 26, 1),
+(6, 27, 0),
+(6, 28, 1),
+(6, 29, 0),
+(6, 30, 1),
+(6, 31, 1),
+(6, 32, 0),
+(6, 33, 0),
+(6, 34, 1),
+(6, 35, 0),
+(6, 36, 1),
+(6, 37, 1),
+(6, 38, 1),
+(7, 1, 0),
+(7, 2, 0),
+(7, 3, 0),
+(7, 4, 0),
+(7, 5, 0),
+(7, 6, 0),
+(7, 7, 0),
+(7, 8, 0),
+(7, 9, 0),
+(7, 10, 0),
+(7, 11, 0),
+(7, 12, 0),
+(7, 13, 0),
+(7, 14, 0),
+(7, 15, 0),
+(7, 16, 0),
+(7, 17, 0),
+(7, 18, 0),
+(7, 19, 0),
+(7, 20, 0),
+(7, 21, 0),
+(7, 22, 0),
+(7, 23, 0),
+(7, 24, 0),
+(7, 25, 0),
+(7, 26, 0),
+(7, 27, 0),
+(7, 28, 0),
+(7, 29, 0),
+(7, 30, 0),
+(7, 31, 0),
+(7, 32, 0),
+(7, 33, 0),
+(7, 34, 0),
+(7, 35, 0),
+(7, 36, 0),
+(7, 37, 0),
+(7, 38, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -61,18 +333,20 @@ CREATE TABLE IF NOT EXISTS `assignment` (
 CREATE TABLE IF NOT EXISTS `bencana` (
   `id_bencana` int(10) NOT NULL,
   `nama_bencana` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bencana`
 --
 
 INSERT INTO `bencana` (`id_bencana`, `nama_bencana`) VALUES
-(1, 'Angin Topan'),
-(2, 'Gunung Meletus'),
-(3, 'Gempa Bumi'),
-(4, 'Tanah Longsor'),
-(5, 'Banjir');
+(6, 'Gempa Bumi'),
+(7, 'Tanah Longsor'),
+(8, 'Banjir'),
+(9, 'Tsunami'),
+(10, 'Kekeringan'),
+(11, 'Erosi'),
+(12, 'Gunung Berapi');
 
 -- --------------------------------------------------------
 
@@ -85,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `biaya` (
   `id_tenaga_medis` int(10) NOT NULL,
   `id_kota` int(10) NOT NULL,
   `biaya` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `biaya`
@@ -126,7 +400,12 @@ INSERT INTO `biaya` (`id_biaya`, `id_tenaga_medis`, `id_kota`, `biaya`) VALUES
 (67, 7, 2, 15),
 (68, 7, 3, 6),
 (69, 7, 4, 16),
-(70, 7, 5, 8);
+(70, 7, 5, 8),
+(71, 1, 6, 13),
+(72, 2, 6, 30),
+(73, 3, 6, 15),
+(74, 5, 6, 44),
+(75, 7, 6, 20);
 
 -- --------------------------------------------------------
 
@@ -137,18 +416,51 @@ INSERT INTO `biaya` (`id_biaya`, `id_tenaga_medis`, `id_kota`, `biaya`) VALUES
 CREATE TABLE IF NOT EXISTS `kab_kota` (
   `id_kota` int(10) NOT NULL,
   `nama_kota` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kab_kota`
 --
 
 INSERT INTO `kab_kota` (`id_kota`, `nama_kota`) VALUES
-(1, 'Surabaya'),
-(2, 'Mojokerto'),
-(3, 'Jombang'),
-(4, 'Kediri'),
-(5, 'Tulungagung');
+(1, 'Kota Surabaya'),
+(2, 'Sidoarjo'),
+(3, 'Kota Mojokerto'),
+(4, 'Kabupaten Mojokerto'),
+(5, 'Gresik'),
+(6, 'Lamongan'),
+(7, 'Tuban'),
+(8, 'Bojonegoro'),
+(9, 'Bangkalan'),
+(10, 'Sampang'),
+(11, 'Pamekasan'),
+(12, 'Sumenep'),
+(13, 'Ngawi'),
+(14, 'Magetan'),
+(15, 'Kota Madiun'),
+(16, 'Kabupaten Madiun'),
+(17, 'Kota Kediri'),
+(18, 'Kabupaten Kediri'),
+(19, 'Nganjuk'),
+(20, 'Jombang'),
+(21, 'Ponorogo'),
+(22, 'Pacitan'),
+(23, 'Trenggalek'),
+(24, 'Tulungagung'),
+(25, 'Kodya Blitar'),
+(26, 'Kabupaten Blitar'),
+(27, 'Kodya Pasuruan'),
+(28, 'Kabupaten Pasuruan'),
+(29, 'Kodya Probolinggo'),
+(30, 'Kab. Probolinggo'),
+(31, 'Situbondo'),
+(32, 'Bondowoso'),
+(33, 'Kota Malang'),
+(34, 'Kabupaten Malang'),
+(35, 'Kota Batu'),
+(36, 'Lumajang'),
+(37, 'Jember'),
+(38, 'Banyuwangi');
 
 -- --------------------------------------------------------
 
@@ -172,8 +484,8 @@ INSERT INTO `keahlian` (`id_keahlian`, `nama_keahlian`) VALUES
 (4, 'Kulit'),
 (5, 'Koordinator'),
 (6, 'Asisten'),
-(7, 'DokterUtama'),
-(8, 'PembantuDokter');
+(7, 'Dokter Utama'),
+(8, 'Pembantu Dokter');
 
 -- --------------------------------------------------------
 
@@ -191,15 +503,13 @@ CREATE TABLE IF NOT EXISTS `memerlukan` (
 --
 
 INSERT INTO `memerlukan` (`id_bencana`, `id_keahlian`) VALUES
-(1, 2),
-(1, 4),
-(2, 3),
-(3, 1),
-(3, 7),
-(4, 3),
-(4, 6),
-(5, 2),
-(5, 7);
+(8, 7),
+(6, 7),
+(12, 7),
+(10, 7),
+(7, 7),
+(9, 7),
+(11, 7);
 
 -- --------------------------------------------------------
 
@@ -270,13 +580,93 @@ CREATE TABLE IF NOT EXISTS `rawan_akan` (
 --
 
 INSERT INTO `rawan_akan` (`id_kota`, `id_bencana`) VALUES
-(1, 1),
-(2, 2),
-(2, 3),
-(3, 3),
-(3, 4),
-(4, 5),
-(5, 2);
+(12, 6),
+(21, 6),
+(22, 6),
+(18, 6),
+(23, 6),
+(24, 6),
+(26, 6),
+(34, 6),
+(36, 6),
+(37, 6),
+(38, 6),
+(28, 6),
+(30, 6),
+(31, 6),
+(12, 7),
+(28, 7),
+(30, 7),
+(35, 7),
+(22, 7),
+(23, 7),
+(1, 8),
+(2, 8),
+(3, 8),
+(4, 8),
+(5, 8),
+(6, 8),
+(7, 8),
+(8, 8),
+(9, 8),
+(27, 8),
+(28, 8),
+(34, 8),
+(31, 8),
+(38, 8),
+(36, 8),
+(20, 8),
+(1, 9),
+(23, 9),
+(24, 9),
+(34, 9),
+(36, 9),
+(37, 9),
+(26, 9),
+(11, 10),
+(12, 10),
+(7, 10),
+(8, 10),
+(28, 10),
+(30, 10),
+(13, 10),
+(14, 10),
+(15, 10),
+(16, 10),
+(17, 10),
+(18, 10),
+(19, 10),
+(20, 10),
+(21, 10),
+(22, 10),
+(23, 10),
+(24, 10),
+(9, 11),
+(10, 11),
+(11, 11),
+(15, 11),
+(21, 11),
+(22, 11),
+(23, 11),
+(25, 11),
+(27, 11),
+(30, 11),
+(32, 11),
+(14, 12),
+(21, 12),
+(16, 12),
+(18, 12),
+(19, 12),
+(26, 12),
+(34, 12),
+(3, 12),
+(4, 12),
+(28, 12),
+(30, 12),
+(32, 12),
+(36, 12),
+(37, 12),
+(38, 12);
 
 -- --------------------------------------------------------
 
@@ -376,17 +766,17 @@ ALTER TABLE `tenaga_medis`
 -- AUTO_INCREMENT for table `bencana`
 --
 ALTER TABLE `bencana`
-  MODIFY `id_bencana` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_bencana` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `biaya`
 --
 ALTER TABLE `biaya`
-  MODIFY `id_biaya` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
+  MODIFY `id_biaya` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
 --
 -- AUTO_INCREMENT for table `kab_kota`
 --
 ALTER TABLE `kab_kota`
-  MODIFY `id_kota` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_kota` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `keahlian`
 --

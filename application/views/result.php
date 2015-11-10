@@ -10,7 +10,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <div class="dataTable_wrapper">
+                    <div class="dataTable_wrapper" style="overflow:auto">
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
 							<?php $cityCount = 0;?>
                             <thead>
