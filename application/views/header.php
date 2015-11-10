@@ -120,6 +120,12 @@
                     <li><a href="<?=site_url("beranda")?>">
                         <i class="fa fa-home fa-fw"></i> Beranda
                     </a></li>
+					<li><a href="<?=site_url("compute")?>">
+                        <i class="fa fa-search fa-fw"></i> Feasible
+                    </a></li>
+					<li><a href="<?=site_url("solution")?>">
+                        <i class="fa fa-ambulance fa-fw"></i> Penugasan
+                    </a></li>
                     <?php if($this->session->userdata('privilege') == 'administrator')
                     {
                         echo '

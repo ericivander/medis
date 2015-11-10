@@ -268,7 +268,8 @@ class Compute extends CI_Controller
 		{
 			foreach($this->City as $col)
 			{
-				$this->assignment->insert($row->id, $col->id, $this->DoctorXCity[$row->id][$col->id]);
+				$tmp = $this->DoctorXCity[$row->id][$col->id];
+				$this->assignment->insert($row->id, $col->id, $tmp);
 			}
 		}
 	}
@@ -293,7 +294,9 @@ class Compute extends CI_Controller
 			if($row->value)
 			{
 				$value = $this->biaya_model->getValue($row->id_t, $row->id_k);
-				$this->DoctorXCity[$row->id_t][$row->id_k] = $value->biaya;
+				if($value == NULL) $value = 999;
+				else $value = $value->biaya;
+				$this->DoctorXCity[$row->id_t][$row->id_k] = $value;
 			}
 		}
 		
@@ -316,7 +319,7 @@ class Compute extends CI_Controller
 		$data['city'] = $this->City;
 		
 		$this->load->view('header');
-		$this->load->view('beranda', $data);
+		$this->load->view('feasible', $data);
 		$this->load->view('footer');
 	}
 	
