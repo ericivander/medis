@@ -64,6 +64,15 @@ class Kab_kota_model extends CI_Model
 		return $data->result();
 	}
 	
+	public function getIDandName()
+	{
+		$this->db->select('id_kota as id, nama_kota as nama');
+		$this->db->from('kab_kota');
+		$data = $this->db->get();
+
+		return $data->result();
+	}
+	
 	public function getXCon()
 	{
 		$this->db->select('id_kota as id_k, id_bencana as id_b');

@@ -1,7 +1,7 @@
 <div class="col-lg-8 col-lg-offset-2" id="page-content">
     <div class="row">
         <div class="col-lg-8">
-            <h1 class="page-header">Feasible Study</h1>
+            <h1 class="page-header">Hasil Kelayakan</h1>
         </div>
 		<div class="col-lg-4 text-right">
 			<br/>

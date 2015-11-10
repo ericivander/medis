@@ -12,6 +12,17 @@ class Assignment extends CI_Model
 
 		return $data->result();
 	}
+	
+	public function getAssignment($id_dokter, $id_kota)
+	{
+		$this->db->select('assignment.assignment as value');
+		$this->db->from('assignment');
+		$this->db->where('id_tenaga_medis', $id_dokter);
+		$this->db->where('id_kota', $id_kota);
+		$data = $this->db->get();
+		
+		return $data->row();
+	}
 
 	public function insert($id_tenaga_medis, $id_kota, $assignment)
 	{

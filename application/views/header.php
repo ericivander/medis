@@ -121,7 +121,7 @@
                         <i class="fa fa-home fa-fw"></i> Beranda
                     </a></li>
 					<li><a href="<?=site_url("compute")?>">
-                        <i class="fa fa-search fa-fw"></i> Feasible
+                        <i class="fa fa-search fa-fw"></i> Kelayakan
                     </a></li>
 					<li><a href="<?=site_url("solution")?>">
                         <i class="fa fa-ambulance fa-fw"></i> Penugasan
