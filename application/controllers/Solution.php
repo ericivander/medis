@@ -12,6 +12,61 @@ class Solution extends CI_Controller
 	 		redirect ('login');
 		}
 		*/
+		$this->INF = 999999999;
+		$this->idDokters = null;
+		$this->idKotas = null;
+		$this->dataMatrix = null;
+		$this->next = null;
+		$this->cityAssigned = null;
+		$this->last = null;
+		$this->current = null;
+		$this->firstID = -1;
+	}
+	
+	public function hungarian()
+	{
+		
+	}
+	
+	public function solve($idx)
+	{
+		if($idx == -1) return 0;
+		$mins = $this->INF;
+		$ans = 0;
+		foreach($this->idKotas as $i)
+		{
+			$flag = true;
+			for($j = $this->firstID; $j != $idx; $j = $this->next[$j])
+			{
+				if($this->last[$j] == $i) $flag = false;
+			}
+			if($flag)
+			{
+				if($this->dataMatrix[$idx][$i] != -1)
+				{
+					$this->last[$idx] = $i;
+					$ans = $this->dataMatrix[$idx][$i];
+				}
+				else
+				{
+					$this->last[$idx] = -1;
+				}
+				$ans += $this->solve($this->next[$idx]);
+				if($ans < $mins)
+				{
+					$mins = $ans;
+					if($this->dataMatrix[$idx][$i] != -1) $this->current[$idx] = $i;
+					if($idx == $this->firstID)
+					{
+						foreach($this->idDokters as $j)
+						{
+							$this->cityAssigned[$j] = $this->current[$j];
+						}
+					}
+				}
+			}
+		}
+		return $mins;
 	}
 	
 	public function main()
@@ -29,114 +84,57 @@ class Solution extends CI_Controller
 			if($value != 1) unset($visCity->$key);
 		}
 		
-		$idDokters = null;
-		$idKotas = null;
-		$dataMatrix = null;
+		$this->idDokters = null;
+		$this->idKotas = null;
+		$this->dataMatrix = null;
+		$this->next = null;
+		$this->cityAssigned = null;
+		$this->last = null;
+		$this->current = null;
 		
 		$this->load->model('tenaga_medis_model');
 		$this->load->model('kab_kota_model');
 		$this->load->model('assignment');
 		$this->load->model('biaya_model');
 		
+		$this->firstID = -1;
+		$before = -1;
 		foreach($visDoctor as $key1 => $value1)
 		{
+			$idDokter = $this->tenaga_medis_model->get_id_by_name($key1)->id_tenaga_medis;
+			$this->idDokters[$key1] = $idDokter;
+			if($this->firstID == (-1)) $this->firstID = $idDokter;
+			else $this->next[$before] = $idDokter;
+			$this->cityAssigned[$idDokter] = -1;
+			$this->last[$idDokter] = -1;
+			$this->current[$idDokter] = -1;
 			foreach($visCity as $key2 => $value2)
 			{
-				$idDokter = $this->tenaga_medis_model->get_id_by_name($key1)->id_tenaga_medis;
-				$idDokters[$key1] = $idDokter;
 				$idKota = $this->kab_kota_model->get_id_by_name($key2)->id_kota;
-				$idKotas[$key2] = $idKota;
+				$this->idKotas[$key2] = $idKota;
 				$feasible = $this->assignment->getAssignment($idDokter, $idKota)->value;
 				if($feasible)
 				{
 					$tmp = $this->biaya_model->getValue($idDokter, $idKota);
 					if($tmp == null) $tmp = -1;
 					else $tmp = $tmp->biaya;
-					$dataMatrix[$idDokter][$idKota] = $tmp;
+					$this->dataMatrix[$idDokter][$idKota] = $tmp;
 				}
 				else
 				{
-					$dataMatrix[$idDokter][$idKota] = -1;
+					$this->dataMatrix[$idDokter][$idKota] = -1;
 				}
 			}
+			$before = $idDokter;
 		}
+		$this->next[$before] = -1;
 		
-		//print_r($visDoctor);
-		//print_r($visCity);
-		/*
-		echo "Data Matrix";
-		echo "<br/>";
-		echo "<table>";
-		foreach($idDokters as $idDokter)
-		{
-			echo "<tr>";
-			foreach($idKotas as $idKota)
-			{
-				echo "<td>";
-				echo $dataMatrix[$idDokter][$idKota];
-				echo "</td>";
-			}
-			echo "</tr>";
-		}
-		echo "</table>";
-		*/
+		$this->solve($this->firstID);
 		
-		$mins = null;
-		$doctorCity = null;
-		foreach($idDokters as $idDokter)
-		{
-			$mins[$idDokter] = 999999999;
-			$doctorCity[$idDokter] = [];
-			foreach($idKotas as $idKota)
-			{
-				$tmp = $dataMatrix[$idDokter][$idKota];
-				if($tmp != (-1) && $mins[$idDokter] > $tmp)
-				{
-					$mins[$idDokter] = $tmp;
-					$doctorCity[$idDokter] = [];
-				}
-				if($mins[$idDokter] == $tmp)
-				{
-					array_push($doctorCity[$idDokter], $idKota);
-				}
-			}
-		}
-		
-		foreach($idDokters as $idDokter1)
-		{
-			foreach($idDokters as $idDokter2)
-			{
-				if($idDokter1 == $idDokter2) continue;
-				foreach($doctorCity[$idDokter1] as $idx1 => $iter1)
-				{
-					foreach($doctorCity[$idDokter2] as $idx2 => $iter2)
-					{
-						if($iter1 == $iter2)
-						{
-							if(intval($dataMatrix[$idDokter1][$iter1]) < intval($dataMatrix[$idDokter2][$iter2]))
-							{
-								unset($doctorCity[$idDokter2][$idx2]);
-							}
-							else
-							{
-								unset($doctorCity[$idDokter1][$idx1]);
-							}
-						}
-					}
-				}
-			}
-		}
-		/*
-		print_r($mins);
-		echo "<br/>";
-		print_r($doctorCity);
-		echo "<br/>";
-		*/
-		
-		$data['idDokters'] = $idDokters;
-		$data['idKotas'] = $idKotas;
-		$data['dataMatrix'] = $dataMatrix;
-		$data['doctorCity'] = $doctorCity;
+		$data['idDokters'] = $this->idDokters;
+		$data['idKotas'] = $this->idKotas;
+		$data['dataMatrix'] = $this->dataMatrix;
+		$data['cityAssigned'] = $this->cityAssigned;
 		$data['vDoctor'] = $visDoctor;
 		$data['vCity'] = $visCity;
 		

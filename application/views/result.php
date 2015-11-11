@@ -45,10 +45,7 @@
 												foreach($vCity as $key2 => $value2)
 												{
 													$flag = false;
-													foreach($doctorCity[$idDokters[$key]] as $iter)
-													{
-														if($iter == $idKotas[$key2]) $flag = true;
-													}
+													if($cityAssigned[$idDokters[$key]] == $idKotas[$key2]) $flag = true;
 													if($flag)
 														echo '<td style="background-color:#19FF8E">';
 													else
