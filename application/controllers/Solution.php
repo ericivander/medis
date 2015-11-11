@@ -12,61 +12,55 @@ class Solution extends CI_Controller
 	 		redirect ('login');
 		}
 		*/
-		$this->INF = 999999999;
+		$this->INF = 10001;
 		$this->idDokters = null;
 		$this->idKotas = null;
 		$this->dataMatrix = null;
 		$this->next = null;
 		$this->cityAssigned = null;
-		$this->last = null;
 		$this->current = null;
 		$this->firstID = -1;
+		$this->globalMin = $this->INF * $this->INF;
 	}
 	
-	public function hungarian()
+	public function solve($idx, $dist)
 	{
-		
-	}
-	
-	public function solve($idx)
-	{
-		if($idx == -1) return 0;
-		$mins = $this->INF;
-		$ans = 0;
+		if($idx == -1)
+		{
+			if($dist < $this->globalMin)
+			{
+				$this->globalMin = $dist;
+				for($i = $this->firstID; $i != (-1); $i = $this->next[$i])
+				{
+					$this->cityAssigned[$i] = $this->current[$i];
+				}
+			}
+			return;
+		}
 		foreach($this->idKotas as $i)
 		{
 			$flag = true;
 			for($j = $this->firstID; $j != $idx; $j = $this->next[$j])
 			{
-				if($this->last[$j] == $i) $flag = false;
+				if($this->current[$j] == $i) $flag = false;
 			}
 			if($flag)
 			{
-				if($this->dataMatrix[$idx][$i] != -1)
+				$tmp = 0;
+				if($this->dataMatrix[$idx][$i] == -1)
 				{
-					$this->last[$idx] = $i;
-					$ans = $this->dataMatrix[$idx][$i];
+					$tmp = $this->INF;
+					$this->current[$idx] = -1;
 				}
 				else
 				{
-					$this->last[$idx] = -1;
+					$tmp = $this->dataMatrix[$idx][$i];
+					$this->current[$idx] = $i;
 				}
-				$ans += $this->solve($this->next[$idx]);
-				if($ans < $mins)
-				{
-					$mins = $ans;
-					if($this->dataMatrix[$idx][$i] != -1) $this->current[$idx] = $i;
-					if($idx == $this->firstID)
-					{
-						foreach($this->idDokters as $j)
-						{
-							$this->cityAssigned[$j] = $this->current[$j];
-						}
-					}
-				}
+				$this->solve($this->next[$idx], $dist + $tmp);
 			}
 		}
-		return $mins;
+		return;
 	}
 	
 	public function main()
@@ -89,7 +83,6 @@ class Solution extends CI_Controller
 		$this->dataMatrix = null;
 		$this->next = null;
 		$this->cityAssigned = null;
-		$this->last = null;
 		$this->current = null;
 		
 		$this->load->model('tenaga_medis_model');
@@ -106,7 +99,6 @@ class Solution extends CI_Controller
 			if($this->firstID == (-1)) $this->firstID = $idDokter;
 			else $this->next[$before] = $idDokter;
 			$this->cityAssigned[$idDokter] = -1;
-			$this->last[$idDokter] = -1;
 			$this->current[$idDokter] = -1;
 			foreach($visCity as $key2 => $value2)
 			{
@@ -129,7 +121,8 @@ class Solution extends CI_Controller
 		}
 		$this->next[$before] = -1;
 		
-		$this->solve($this->firstID);
+		$this->globalMin = $this->INF * $this->INF;
+		$this->solve($this->firstID, 0);
 		
 		$data['idDokters'] = $this->idDokters;
 		$data['idKotas'] = $this->idKotas;
