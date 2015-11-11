@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2015 at 06:04 PM
+-- Generation Time: Nov 11, 2015 at 10:01 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -101,76 +101,76 @@ INSERT INTO `assignment` (`id_tenaga_medis`, `id_kota`, `assignment`) VALUES
 (2, 4, 0),
 (2, 5, 0),
 (2, 6, 0),
-(2, 7, 0),
-(2, 8, 0),
-(2, 9, 0),
-(2, 10, 0),
-(2, 11, 0),
+(2, 7, 1),
+(2, 8, 1),
+(2, 9, 1),
+(2, 10, 1),
+(2, 11, 1),
 (2, 12, 1),
-(2, 13, 0),
-(2, 14, 0),
-(2, 15, 0),
-(2, 16, 0),
-(2, 17, 0),
+(2, 13, 1),
+(2, 14, 1),
+(2, 15, 1),
+(2, 16, 1),
+(2, 17, 1),
 (2, 18, 1),
-(2, 19, 0),
-(2, 20, 0),
+(2, 19, 1),
+(2, 20, 1),
 (2, 21, 1),
 (2, 22, 1),
 (2, 23, 1),
 (2, 24, 1),
-(2, 25, 0),
-(2, 26, 1),
-(2, 27, 0),
+(2, 25, 1),
+(2, 26, 0),
+(2, 27, 1),
 (2, 28, 1),
 (2, 29, 0),
 (2, 30, 1),
-(2, 31, 1),
-(2, 32, 0),
+(2, 31, 0),
+(2, 32, 1),
 (2, 33, 0),
-(2, 34, 1),
+(2, 34, 0),
 (2, 35, 0),
-(2, 36, 1),
-(2, 37, 1),
-(2, 38, 1),
+(2, 36, 0),
+(2, 37, 0),
+(2, 38, 0),
 (3, 1, 0),
 (3, 2, 0),
 (3, 3, 0),
 (3, 4, 0),
 (3, 5, 0),
 (3, 6, 0),
-(3, 7, 0),
-(3, 8, 0),
-(3, 9, 0),
-(3, 10, 0),
-(3, 11, 0),
+(3, 7, 1),
+(3, 8, 1),
+(3, 9, 1),
+(3, 10, 1),
+(3, 11, 1),
 (3, 12, 1),
-(3, 13, 0),
-(3, 14, 0),
-(3, 15, 0),
-(3, 16, 0),
-(3, 17, 0),
+(3, 13, 1),
+(3, 14, 1),
+(3, 15, 1),
+(3, 16, 1),
+(3, 17, 1),
 (3, 18, 1),
-(3, 19, 0),
-(3, 20, 0),
+(3, 19, 1),
+(3, 20, 1),
 (3, 21, 1),
 (3, 22, 1),
 (3, 23, 1),
 (3, 24, 1),
-(3, 25, 0),
-(3, 26, 1),
-(3, 27, 0),
+(3, 25, 1),
+(3, 26, 0),
+(3, 27, 1),
 (3, 28, 1),
 (3, 29, 0),
 (3, 30, 1),
-(3, 31, 1),
-(3, 32, 0),
+(3, 31, 0),
+(3, 32, 1),
 (3, 33, 0),
-(3, 34, 1),
+(3, 34, 0),
 (3, 35, 0),
-(3, 36, 1),
-(3, 37, 1),
-(3, 38, 1),
+(3, 36, 0),
+(3, 37, 0),
+(3, 38, 0),
 (4, 1, 0),
 (4, 2, 0),
 (4, 3, 0),
@@ -215,76 +215,76 @@ INSERT INTO `assignment` (`id_tenaga_medis`, `id_kota`, `assignment`) VALUES
 (5, 4, 0),
 (5, 5, 0),
 (5, 6, 0),
-(5, 7, 0),
-(5, 8, 0),
-(5, 9, 0),
-(5, 10, 0),
-(5, 11, 0),
+(5, 7, 1),
+(5, 8, 1),
+(5, 9, 1),
+(5, 10, 1),
+(5, 11, 1),
 (5, 12, 1),
-(5, 13, 0),
-(5, 14, 0),
-(5, 15, 0),
-(5, 16, 0),
-(5, 17, 0),
+(5, 13, 1),
+(5, 14, 1),
+(5, 15, 1),
+(5, 16, 1),
+(5, 17, 1),
 (5, 18, 1),
-(5, 19, 0),
-(5, 20, 0),
+(5, 19, 1),
+(5, 20, 1),
 (5, 21, 1),
 (5, 22, 1),
 (5, 23, 1),
 (5, 24, 1),
-(5, 25, 0),
-(5, 26, 1),
-(5, 27, 0),
+(5, 25, 1),
+(5, 26, 0),
+(5, 27, 1),
 (5, 28, 1),
 (5, 29, 0),
 (5, 30, 1),
-(5, 31, 1),
-(5, 32, 0),
+(5, 31, 0),
+(5, 32, 1),
 (5, 33, 0),
-(5, 34, 1),
+(5, 34, 0),
 (5, 35, 0),
-(5, 36, 1),
-(5, 37, 1),
-(5, 38, 1),
+(5, 36, 0),
+(5, 37, 0),
+(5, 38, 0),
 (6, 1, 0),
 (6, 2, 0),
 (6, 3, 0),
 (6, 4, 0),
 (6, 5, 0),
 (6, 6, 0),
-(6, 7, 0),
-(6, 8, 0),
-(6, 9, 0),
-(6, 10, 0),
-(6, 11, 0),
+(6, 7, 1),
+(6, 8, 1),
+(6, 9, 1),
+(6, 10, 1),
+(6, 11, 1),
 (6, 12, 1),
-(6, 13, 0),
-(6, 14, 0),
-(6, 15, 0),
-(6, 16, 0),
-(6, 17, 0),
+(6, 13, 1),
+(6, 14, 1),
+(6, 15, 1),
+(6, 16, 1),
+(6, 17, 1),
 (6, 18, 1),
-(6, 19, 0),
-(6, 20, 0),
+(6, 19, 1),
+(6, 20, 1),
 (6, 21, 1),
 (6, 22, 1),
 (6, 23, 1),
 (6, 24, 1),
-(6, 25, 0),
-(6, 26, 1),
-(6, 27, 0),
+(6, 25, 1),
+(6, 26, 0),
+(6, 27, 1),
 (6, 28, 1),
 (6, 29, 0),
 (6, 30, 1),
-(6, 31, 1),
-(6, 32, 0),
+(6, 31, 0),
+(6, 32, 1),
 (6, 33, 0),
-(6, 34, 1),
+(6, 34, 0),
 (6, 35, 0),
-(6, 36, 1),
-(6, 37, 1),
-(6, 38, 1),
+(6, 36, 0),
+(6, 37, 0),
+(6, 38, 0),
 (7, 1, 0),
 (7, 2, 0),
 (7, 3, 0),
@@ -333,7 +333,7 @@ INSERT INTO `assignment` (`id_tenaga_medis`, `id_kota`, `assignment`) VALUES
 CREATE TABLE IF NOT EXISTS `bencana` (
   `id_bencana` int(10) NOT NULL,
   `nama_bencana` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `bencana`
@@ -346,7 +346,9 @@ INSERT INTO `bencana` (`id_bencana`, `nama_bencana`) VALUES
 (9, 'Tsunami'),
 (10, 'Kekeringan'),
 (11, 'Erosi'),
-(12, 'Gunung Berapi');
+(12, 'Gunung Berapi'),
+(13, 'Kebakaran Hutan'),
+(14, 'Kerusuhan Massal');
 
 -- --------------------------------------------------------
 
@@ -359,7 +361,7 @@ CREATE TABLE IF NOT EXISTS `biaya` (
   `id_tenaga_medis` int(10) NOT NULL,
   `id_kota` int(10) NOT NULL,
   `biaya` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=77 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `biaya`
@@ -471,21 +473,32 @@ INSERT INTO `kab_kota` (`id_kota`, `nama_kota`) VALUES
 CREATE TABLE IF NOT EXISTS `keahlian` (
   `id_keahlian` int(10) NOT NULL,
   `nama_keahlian` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `keahlian`
 --
 
 INSERT INTO `keahlian` (`id_keahlian`, `nama_keahlian`) VALUES
-(1, 'Bedah'),
+(1, 'Bedah Umum'),
 (2, 'Jantung'),
 (3, 'Kandungan'),
 (4, 'Kulit'),
 (5, 'Koordinator'),
 (6, 'Asisten'),
 (7, 'Dokter Utama'),
-(8, 'Pembantu Dokter');
+(8, 'Pembantu Dokter'),
+(9, 'Pulmonologi'),
+(10, 'Penyakit Dalam'),
+(11, 'Anastesi'),
+(12, 'Forensik'),
+(13, 'Psikiater'),
+(14, 'DVI'),
+(15, 'Orthopedi'),
+(16, 'Anak'),
+(17, 'Obsygn'),
+(18, 'Bedah Plastik'),
+(19, 'Intensive Care');
 
 -- --------------------------------------------------------
 
@@ -503,13 +516,63 @@ CREATE TABLE IF NOT EXISTS `memerlukan` (
 --
 
 INSERT INTO `memerlukan` (`id_bencana`, `id_keahlian`) VALUES
-(8, 7),
-(6, 7),
-(12, 7),
 (10, 7),
-(7, 7),
-(9, 7),
-(11, 7);
+(11, 7),
+(13, 10),
+(13, 9),
+(14, 11),
+(14, 1),
+(14, 14),
+(14, 12),
+(14, 15),
+(14, 10),
+(14, 13),
+(9, 16),
+(9, 11),
+(9, 1),
+(9, 12),
+(9, 15),
+(9, 10),
+(9, 13),
+(8, 16),
+(8, 11),
+(8, 18),
+(8, 1),
+(8, 14),
+(8, 12),
+(8, 17),
+(8, 15),
+(8, 10),
+(8, 13),
+(8, 9),
+(6, 16),
+(6, 11),
+(6, 18),
+(6, 1),
+(6, 14),
+(6, 12),
+(6, 17),
+(6, 15),
+(6, 10),
+(6, 13),
+(7, 16),
+(7, 11),
+(7, 18),
+(7, 1),
+(7, 14),
+(7, 12),
+(7, 17),
+(7, 15),
+(7, 10),
+(7, 13),
+(7, 9),
+(12, 11),
+(12, 18),
+(12, 1),
+(12, 12),
+(12, 19),
+(12, 10),
+(12, 13);
 
 -- --------------------------------------------------------
 
@@ -766,12 +829,12 @@ ALTER TABLE `tenaga_medis`
 -- AUTO_INCREMENT for table `bencana`
 --
 ALTER TABLE `bencana`
-  MODIFY `id_bencana` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_bencana` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `biaya`
 --
 ALTER TABLE `biaya`
-  MODIFY `id_biaya` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=77;
+  MODIFY `id_biaya` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT for table `kab_kota`
 --
@@ -781,7 +844,7 @@ ALTER TABLE `kab_kota`
 -- AUTO_INCREMENT for table `keahlian`
 --
 ALTER TABLE `keahlian`
-  MODIFY `id_keahlian` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_keahlian` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `pusat_sdm_medis`
 --
